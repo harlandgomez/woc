@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NewBooking.master.cs" Inherits="WOC.Book.NewBooking.NewBooking"  %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title></title>
+
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" href="../Jquery/css/ui-lightness/jquery-ui-1.8.13.custom.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="../Jquery/jquery.autocomplete.css" />
+
+    <script type="text/javascript" src="../Jquery/js/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="../Jquery/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../Jquery/js/jquery-ui-1.8.13.custom.min.js"></script>
+    <script type="text/javascript" src="../Jquery/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../Jquery/jquery.autocomplete.js"></script>
+
+    <telerik:RadScriptBlock ID="rsbDatePicker" runat="server">
+        <script type="text/javascript" src="../Jquery/js/datepicker/locale/jquery.ui.datepicker-<%= WOC.Book.Properties.WebResources.datelocale %>.min.js"></script>
+        <script type="text/javascript" language="javascript">
+            var regionString = '<%= WOC.Book.Properties.WebResources.datelocale %>'
+        </script>
+    </telerik:RadScriptBlock>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+        <script type="text/javascript" language="javascript">
+            var isDirty = false;
+            $(document).ready(function () {
+
+                $.datepicker.setDefaults($.datepicker.regional[regionString]);
+
+                $(':input').change(function () {
+                    if (!isDirty) {
+                        isDirty = true;
+                    }
+                });
+                $('a').click(function () {
+                    var link = $(this).attr('href');
+                    if (link.toString() == '#tabs-1' || link.toString() == '#tabs-2' || link.toString() == '#tabs-3') {
+                        return true;
+                    }
+                    if (isDirty) {
+                        var confirmExit = confirm('Are you sure? You haven\'t saved your changes. Click OK to leave or Cancel to go back and save your changes.');
+                        if (confirmExit) {
+                            return true;
+                        }
+                        else {
+                            return false;
+                        }
+                    }
+                });
+            });
+    </script>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <asp:ScriptManager ID="scmRegistration" runat="server" /> 
+    <div class="page">
+        <div class="clear hideSkiplink">
+            <center>
+                <asp:HyperLink ID="lnkOperation" runat="server" NavigateUrl="~/Operation/OperationMenu.aspx" ForeColor="White" style="text-decoration:none">Operation</asp:HyperLink>&nbsp;|
+                <asp:HyperLink ID="lnkNewBooking" runat="server" NavigateUrl="~/NewBooking/NewBookingMenu.aspx" ForeColor="White" style="text-decoration:none">New Booking</asp:HyperLink>&nbsp;|
+                <asp:HyperLink ID="lnkAccounts" runat="server" NavigateUrl="~/Accounts/AccountsMenu.aspx" ForeColor="White" style="text-decoration:none">Accounts</asp:HyperLink>&nbsp;|
+                <asp:HyperLink ID="lnkRegistration" runat="server" NavigateUrl="~/Registration/RegistrationMenu.aspx" ForeColor="White" style="text-decoration:none">Registration</asp:HyperLink>&nbsp;|
+                <asp:HyperLink ID="lnkReport" runat="server" NavigateUrl="~/Report/ReportMenu.aspx" ForeColor="White" style="text-decoration:none">Reports</asp:HyperLink>&nbsp;|
+                <asp:HyperLink ID="lnkAccess" runat="server" NavigateUrl="~/Admin/AdminMenu.aspx" ForeColor="White" style="text-decoration:none">Admin</asp:HyperLink>&nbsp;|
+            </center>
+        </div>
+        <div class="header">
+            <div class="title">
+                <h1>
+                    A&amp;S Bus Transportation System
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginName ID="LoginName1" runat="server" />
+                <asp:Label ID="lblSeperator" runat="server" Text="||"></asp:Label>
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">Log out</asp:HyperLink>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,121 @@
+﻿body   
+{
+    font-size: .70em;
+    font-family: "Calibri","Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+a:visited
+{
+    color:#A9A9A9;
+}
+
+.LoginScreen {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:25em;
+    height:10em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+}
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.page
+{
+    width: 960px;
+    background-color: #fff;
+    margin: 20px auto 0px auto;
+    border: 1px solid #496077;
+}
+div.hideSkiplink
+{
+    background-color:#3a4f63;
+    width:100%;
+}
+.main
+{
+    padding: 0px 12px;
+    margin: 12px 8px 8px 8px;
+    min-height: 420px;
+}
+.clear
+{
+    clear: both;
+}
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+input[type="text"]
+{
+    border: 1px solid #A9A9A9;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+textarea
+{
+    border: 1px solid #A9A9A9;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+input[type="button"]
+{
+    border: 1px solid #696969;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+input[type="submit"]
+{
+    border: 1px solid #696969;
+    background-color: #C0C0C0;
+    padding-left: 1px;
+    padding-right: 1px;
+    width:80px;
+}
+
+input[type="submit"]:hover
+{
+    border: 1px solid #696969;
+    background-color: #778899;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+select
+{
+    border: 1px solid #CCCCCC;
+}

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C48E98AF-DE39-414E-87FE-20655B83195D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Woc.Book.Base</RootNamespace>
+    <AssemblyName>Woc.Book.Base</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessLevelController.cs" />
+    <Compile Include="BusinessEntity\AccessLevels.cs" />
+    <Compile Include="BusinessEntity\Countries.cs" />
+    <Compile Include="BusinessEntity\GSTTypes.cs" />
+    <Compile Include="BusinessEntity\IAccountEntity.cs" />
+    <Compile Include="BusinessEntity\IAdminEntity.cs" />
+    <Compile Include="BusinessEntity\IBusinessEntity.cs" />
+    <Compile Include="BusinessEntity\Images.cs" />
+    <Compile Include="BusinessEntity\INewBookEntity.cs" />
+    <Compile Include="BusinessEntity\IOperation.cs" />
+    <Compile Include="BusinessEntity\DBFieldAttribute.cs" />
+    <Compile Include="BusinessEntity\Sequences.cs" />
+    <Compile Include="Constant\Constant.cs" />
+    <Compile Include="CountryController.cs" />
+    <Compile Include="GSTController.cs" />
+    <Compile Include="IAccountController.cs" />
+    <Compile Include="IAdminController.cs" />
+    <Compile Include="ImageController.cs" />
+    <Compile Include="INewBookingController.cs" />
+    <Compile Include="IOperationController.cs" />
+    <Compile Include="IRegistrationController.cs" />
+    <Compile Include="Presenter\AccessLevelPresenter.cs" />
+    <Compile Include="Presenter\CountryPresenter.cs" />
+    <Compile Include="Presenter\GSTPresenter.cs" />
+    <Compile Include="Presenter\IAccount.cs" />
+    <Compile Include="Presenter\IAdminPresenter.cs" />
+    <Compile Include="Presenter\ImagePresenter.cs" />
+    <Compile Include="Presenter\INewBookingPresenter.cs" />
+    <Compile Include="Presenter\IOperationPresenter.cs" />
+    <Compile Include="Presenter\IRegistrationPresenter.cs" />
+    <Compile Include="Presenter\IReportPresenter.cs" />
+    <Compile Include="Presenter\SequencePresenter.cs" />
+    <Compile Include="Presenter\UserPresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportController.cs" />
+    <Compile Include="SequenceController.cs" />
+    <Compile Include="Service\AccessLevelService.cs" />
+    <Compile Include="Service\CollectionHelper.cs" />
+    <Compile Include="Service\CountryService.cs" />
+    <Compile Include="Service\GSTService.cs" />
+    <Compile Include="Service\IAccountService.cs" />
+    <Compile Include="Service\ImageService.cs" />
+    <Compile Include="Service\INewBookingService.cs" />
+    <Compile Include="Service\SequenceService.cs" />
+    <Compile Include="Service\SQLHelper.cs" />
+    <Compile Include="Service\UserService.cs" />
+    <Compile Include="Service\IRegistrationService.cs" />
+    <Compile Include="UtilityController.cs" />
+    <Compile Include="Service\UtilityService.cs" />
+    <Compile Include="UserController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
